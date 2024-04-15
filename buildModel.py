@@ -9,9 +9,9 @@ import norm_denorm_shuffle as Norm_Denorm_Shuffle
 import tensorflow as tf
 from keras.backend.tensorflow_backend import set_session
 config = tf.ConfigProto()
-config.gpu_options.allocator_type = 'BFC' #A "Best-fit with coalescing" algorithm, simplified from a version of dlmalloc.
-config.gpu_options.per_process_gpu_memory_fraction = 0.50 #設定每個GPU要拿出多少容量給程式使用，0.8代表80%
-config.gpu_options.allow_growth =True #allow_growth option，程式開始執行時分配少量的GPU容量，而後按需求慢慢的增加
+config.gpu_options.allocator_type = 'BFC' 
+config.gpu_options.per_process_gpu_memory_fraction = 0.50 
+config.gpu_options.allow_growth =True 
 set_session(tf.Session(config=config)) 
 #-------------------------------------------------------------------------------------------------------------------------#
 
@@ -140,7 +140,7 @@ class ModelLSTM(Model):
             if self._dropout>0:
                 self._model.add(Dropout(self._dropout))
         elif self._layer>1:  
-            self._model.add(LSTM(self._unit[0], batch_input_shape=(None, timesteps, data_dim),return_sequences=True))    #,return_sequences=True ,recurrent_activation="elu"  #***sample如能用batch_size除盡的話,可加入batch_size。除不盡一定用None(建議使用)。於model.fit設定batch_size  
+            self._model.add(LSTM(self._unit[0], batch_input_shape=(None, timesteps, data_dim),return_sequences=True))    
             if self._dropout>0:
                 self._model.add(Dropout(self._dropout))
             for n in range(self._layer - 2):
@@ -154,7 +154,7 @@ class ModelLSTM(Model):
             print('please check the layer parameter(must be >=1).')
         self._model.add(Dense(1))        
 
-        optimizer=optimizers.Adam(lr=self._lr, beta_1=0.9, beta_2=0.999, amsgrad=False)#original:lr=0.001
+        optimizer=optimizers.Adam(lr=self._lr, beta_1=0.9, beta_2=0.999, amsgrad=False)
         self._model.compile(loss='mae', optimizer=optimizer,metrics=['mae', 'mean_absolute_percentage_error'])#mse
         self._model.summary()
 
@@ -173,7 +173,6 @@ class ModelLSTM(Model):
             shuffle=True) 
 
         self._model.save('./Output_files/ModelSaved/model_{}_{}_ts{}_bs{}_ep{}_{}layer{}_d{}_lr{}_{}.h5'.format(self._model_use,self._lstm_builddata_method,self._pastDay,self._batchsize,self._epoch,self._layer,self._unit,self._dropout,self._lr,self._round_no))
-
         #print(history.history.keys())  #dict_keys(['val_loss', 'loss'])
 
 
@@ -256,12 +255,12 @@ class ModelLSTM(Model):
             
             # df_result.to_csv("./Output_files/lstmself_NORMresult_bs{}_ep{}_{}layer{}_d{}_lr{}_{}.csv".format(self._batchsize,self._epoch,self._layer,self._unit,self._dropout,self._lr,self._round_no),index=Y_date_test) #just for save file
             
-            #when diff. buildmethod in both training(slide) and testing data(block)
+            #when using different buildmethod in both training(slide) and testing data(block)
             df_result["Prediction"]=Norm_Denorm_Shuffle.do_DeNormalize(df_result["Prediction"], self._normalization_method) #mean_train, std_train
             df_result_DeNorm = df_result            
             # df_result_DeNorm.to_csv("./Output_files/lstmself_DENORMresult_bs{}_ep{}_{}layer{}_d{}_lr{}_{}.csv".format(self._batchsize,self._epoch,self._layer,self._unit,self._dropout,self._lr,self._round_no),index=Y_date_test) #just for save file
 
-            #when same buildmethod in both training and testing data
+            #when using same buildmethod in both training and testing data
             # df_result_DeNorm=Norm_Denorm_Shuffle.do_DeNormalize(df_result, self._normalization_method) #mean_train, std_train
             
             

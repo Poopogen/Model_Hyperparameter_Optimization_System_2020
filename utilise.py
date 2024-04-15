@@ -6,14 +6,13 @@ from sklearn import metrics
 
 
 def do_correlation(df_result):
-
-#pearson correlation
-    df_corr=df_result.corr(method='pearson') # return dataframe of correlation matrix
+    #pearson correlation
+    df_corr=df_result.corr(method='pearson') 
     corr=df_corr.loc['Prediction', 'Real']
     #print('corr:\n',corr)
     return corr
 
-def do_mape_mae(df_result): #平均絕對百分比誤差(平均誤差百分比)MAPE #平均絕對誤差(平均誤差絕對值)MAE
+def do_mape_mae(df_result): 
     y_pred=df_result['Prediction']
     y_true=df_result['Real']
     mape_cal=np.mean(np.abs((y_pred - y_true) / y_true)) * 100
@@ -66,15 +65,11 @@ def do_correct_direction(data_result):
     filter_negative = mult < 0 
     filter_positive = mult > 0 
 
-    
 
-    
     mult[filter_negative] = 0
     mult[filter_positive] = 1
 
     def _sum(arr,n): 
-        # return sum using sum  
-        # inbuilt sum() function 
         return(sum(arr))
     
     num=mult.shape[0]
@@ -87,12 +82,3 @@ def do_correct_direction(data_result):
     return correct_direction
 
 
-# def do_cal_shap(model,trai_X_data,test_X_data):
-# # SHAP model explainer
-#     explainer = shap.DeepExplainer(model, train_X_data)
-#     shap_value = explainer.shap_values(test_X_data)
-#     shap_val = np.array(shap_value)
-#     a = np.absolute(shap_val[0])
-#     b = np.sum(a, axis=1)
-#     SHAP_list = [np.sum(b[:, 0]), np.sum(b[:, 1]), np.sum(b[:, 2]), np.sum(b[:, 3]), np.sum(b[:, 4])]
-#     #N_SHAP = normalize(SHAP_list)

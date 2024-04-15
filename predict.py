@@ -4,9 +4,9 @@ import os
 import tensorflow as tf
 from keras.backend.tensorflow_backend import set_session
 config = tf.compat.v1.ConfigProto()
-config.gpu_options.allocator_type = 'BFC' #A "Best-fit with coalescing" algorithm, simplified from a version of dlmalloc.
-config.gpu_options.per_process_gpu_memory_fraction = 0.99 #設定每個GPU要拿出多少容量給程式使用，0.8代表80%
-config.gpu_options.allow_growth =True #allow_growth option，程式開始執行時分配少量的GPU容量，而後按需求慢慢的增加
+config.gpu_options.allocator_type = 'BFC' 
+config.gpu_options.per_process_gpu_memory_fraction = 0.99 
+config.gpu_options.allow_growth =True 
 set_session(tf.compat.v1.Session(config=config)) 
 #from keras.models import load_model
 from sklearn.metrics import mean_squared_error
@@ -146,15 +146,15 @@ if do_normalization==True:
 prediction_report["Predict_target"] = target_type
 
 
-if way=='LSTM': #BuildData_way=predict_lstm_builddata_method
+if way=='LSTM': 
     X_test,Y_test,Y_date_test=BuildData.builddata(test,pastDay=pastDay,futureDay=futureDay,BuildData_way=predict_lstm_builddata_method) #Y_date_train沒作用
 if way=='NN':
-    X_test,Y_test,Y_date_test=BuildData.NNbuilddata(test) #Y_date_train沒作用
+    X_test,Y_test,Y_date_test=BuildData.NNbuilddata(test) 
 
 
 
 
-predictions=loaded_model.predict(X_test)#, batch_size=self._batchsize, verbose=1, steps=None
+predictions=loaded_model.predict(X_test)
 print('\npredictions.shape:',predictions.shape)
 prediction_report["Test data (Prediction)"] = predictions.shape[0]
 
@@ -278,23 +278,22 @@ print('shap_train.shape:',shap_train.shape)
 if do_normalization==True:
     shap_train, nonusetest = Norm_Denorm_Shuffle.do_normalize(shap_train,test,normalization_method)
 
-#f_names = np.array(f_names)
+
 if way=='LSTM':
     shap_X_train,Y_train,Y_date_train=BuildData.builddata(shap_train,pastDay=pastDay,futureDay=futureDay,BuildData_way=lstm_builddata_method) #Y_date_train沒作用
 if way=='NN':
     shap_X_train,Y_train,Y_date_train=BuildData.NNbuilddata(shap_train)
 
-#train=train.iloc[0:14310,:]
-#test=test.iloc[14310:15901,:]
+
 for i in range(rounds):
     print('round_no:',i)
-    background=shap_X_train[np.random.choice(shap_X_train.shape[0], 100, replace=False)]
+    background=shap_X_train[np.random.choice(shap_X_train.shape[0], 2000, replace=False)]
     print('shap_train.shape:\n',background.shape)
 
     explainer = shap.DeepExplainer(loaded_model,background)
     #X_test=X_test[np.random.choice(X_test.shape[0], 150, replace=False)]
 
-    shap_values = explainer.shap_values(X_test[1:5])#
+    shap_values = explainer.shap_values(X_test)
 
     shap_val = np.array(shap_values)
     print('shap_val.shape:\n',shap_val.shape)
@@ -378,17 +377,14 @@ plt.savefig('./Prediction/shap/total_shapplot.png')
 
 
 #==========Global Plots===============#
-#summary plot是针对全部样本预测的解释
-#summary plot
-
 shap_values_2D = shap_values[0].reshape(-1,len(f_names))
 X_test_2D = X_test.reshape(-1,len(f_names))
 print("shap_values_2D.shape:",shap_values_2D.shape, "X_test_2D.shape:", X_test_2D.shape)
 x_test_2d = pd.DataFrame(data=X_test_2D, columns = f_names)
 x_test_2d.corr()
 
-plt.figure(figsize=(13,10))  #點的顏色: 表示該點 feature 本身值的大小  #X軸: 該點對於 Shap 值的影響，也就是對預測值影響。  #Y軸: 各個 features
-shap.summary_plot(shap_values_2D, x_test_2d[0:60], show=False)#,show=True, matplotlib=True
+plt.figure(figsize=(13,10))  
+shap.summary_plot(shap_values_2D, x_test_2d[0:60], show=False)
 plt.tight_layout()
 plt.savefig('./Prediction/shap/summary_plot.png')
 
@@ -401,7 +397,7 @@ print('SHAP Local Plots')
 print('shap_values[0].shape:',shap_values[0].shape)
 num=shap_values[0].shape[0]
 shap.initjs()
-#sample_checked=[0,1,2,3,4,5,6,7]
+
 for i in range(0,num):#sample_checked:
     print('sample',i+1)
     plt.figure(figsize=(15,20)) 
