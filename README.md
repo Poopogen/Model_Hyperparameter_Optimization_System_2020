@@ -1,5 +1,6 @@
 # Auto-Optimization_System_2020
 This repository features a system designed to simplify and automate hyperparameter tuning for machine learning models. Users can plan and select hyperparameters for time-series model training, avoiding the need to repeatedly enter commands when making changes.
+This system is ideal for researchers and engineers seeking an efficient solution for model training, evaluation, and explainability.
 
 ## System Features:
 * Streamlined Training Process: Customize and train models efficiently without redundant manual inputs.
@@ -21,10 +22,10 @@ This repository features a system designed to simplify and automate hyperparamet
      
    * Total Shap value
 
-     <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/4c09b0edada3020a15129535bd0cbcca68a7f79c/Prediction/shap/summary_plot2.png" alt="Alt Text" style="width:40%; height:auto;">
+     <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/4c09b0edada3020a15129535bd0cbcca68a7f79c/Prediction/shap/summary_plot2.png" alt="Alt Text" style="width:50%; height:auto;">
      
    * Local Shap value (Sample-wise)
 
-     <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/653167f9945c207d548a7510f1792f957e660142/Prediction/shap/localplot_sample1.png" alt="Alt Text" style="width:40%; height:auto;">
+     <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/653167f9945c207d548a7510f1792f957e660142/Prediction/shap/localplot_sample1.png" alt="Alt Text" style="width:50%; height:auto;">
 
-This system is ideal for researchers and engineers seeking an efficient solution for model training, evaluation, and explainability.
+
