@@ -9,11 +9,19 @@ This repository features a system designed to simplify and automate hyperparamet
 ## Outputs:
 1. Training Results including learning curves and saved models (stored in /Output_files)
    <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/653167f9945c207d548a7510f1792f957e660142/Output_files/Plot/Loss_plot/mse/loss_per_epoch_withparameterinfo_mse.png" alt="Alt Text" style="width:40%; height:auto;">
-3. Prediction Results including result plots and excel files (stored in /Prediction/output)
-4. AI Explainability (SHAP value Plots stored in /Prediction/shap):
+
+   
+2. Prediction Results including result plots and excel files (stored in /Prediction/output)
+
+ 
+3. AI Explainability (SHAP value Plots stored in /Prediction/shap):
    * Shap value at different timesteps
      <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/653167f9945c207d548a7510f1792f957e660142/Prediction/shap/timestep.png" alt="Alt Text" style="width:50%; height:auto;">
-   * Total Shap value <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/4c09b0edada3020a15129535bd0cbcca68a7f79c/Prediction/shap/summary_plot2.png" alt="Alt Text" style="width:40%; height:auto;">
-   * Local Shap value (Sample-wise) <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/653167f9945c207d548a7510f1792f957e660142/Prediction/shap/localplot_sample1.png" alt="Alt Text" style="width:40%; height:auto;">
+     
+   * Total Shap value
+     <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/4c09b0edada3020a15129535bd0cbcca68a7f79c/Prediction/shap/summary_plot2.png" alt="Alt Text" style="width:40%; height:auto;">
+     
+   * Local Shap value (Sample-wise)
+     <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/653167f9945c207d548a7510f1792f957e660142/Prediction/shap/localplot_sample1.png" alt="Alt Text" style="width:40%; height:auto;">
 
 This system is ideal for researchers and engineers seeking an efficient solution for model training, evaluation, and explainability.
