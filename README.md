@@ -7,7 +7,9 @@ This system is ideal for researchers and engineers seeking an efficient solution
 * Automation and Flexibility: Automatically adjusts and trains based on selected hyperparameters.
 
 ## Inputs:
-**Training and Testing Datasets** (stored in ```/Data```):
+The system processes training and testing datasets stored in the ```/Data``` directory. 
+Users should place their datasets in the appropriate format within this directory for seamless integration into the hyperparameter tuning and model training pipeline.
+
 
 ## Outputs:
 1. **Training Results** including learning curves and saved models (stored in ```/Output_files```)
