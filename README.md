@@ -3,8 +3,8 @@ This repository features a system designed to simplify and automate hyperparamet
 This system is ideal for researchers and engineers seeking an efficient solution for model training, evaluation, and explainability.
 
 **System Features:**
-* Streamlined Training Process: Customize and train models efficiently without redundant manual inputs.
-* Automation and Flexibility: Automatically adjusts and trains based on selected hyperparameters.
+* Streamlined Training Process: Easily customize and train models without repetitive manual inputs, improving efficiency.
+* Automation and Flexibility: Automatically adjusts training based on selected hyperparameters and outputs comprehensive results, including explainability analysis, in both plots and data files.
 
 ## Inputs:
 The system processes datasets stored in the ```/Data``` directory. 
