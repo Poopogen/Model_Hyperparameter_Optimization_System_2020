@@ -7,13 +7,9 @@ System Features:
 
   
 Outputs:
-1. Training Results (stored in /Output_files):
-- Learning Curves: /Output_files/Plot
-- Saved Models: /Output_files/ModelSaved
-
-3. Prediction Results (stored in /Prediction/output)
-
-4. AI Explainability (SHAP Value Plots stored in /Prediction/shap)
+1. Training Results including learning curves and saved models (stored in /Output_files)
+2. Prediction Results including result plots and excel files (stored in /Prediction/output)
+3. AI Explainability (sHAP value Plots stored in /Prediction/shap)
 
 
 This system is ideal for researchers and engineers seeking an efficient solution for model training, evaluation, and explainability.
