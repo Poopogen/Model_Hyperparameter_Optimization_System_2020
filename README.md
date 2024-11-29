@@ -2,7 +2,7 @@
 This repository features a system designed to simplify and automate hyperparameter tuning for machine learning models. Users can plan and select hyperparameters for time-series model training, avoiding the need to repeatedly enter commands when making changes.
 This system is ideal for researchers and engineers seeking an efficient solution for model training, evaluation, and explainability.
 
-## System Features:
+**System Features:**
 * Streamlined Training Process: Customize and train models efficiently without redundant manual inputs.
 * Automation and Flexibility: Automatically adjusts and trains based on selected hyperparameters.
 
