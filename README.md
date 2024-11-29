@@ -19,16 +19,16 @@ Users should place their datasets in the appropriate format within this director
 2. **Prediction Results** including result plots and excel files (stored in ```/Prediction/output```)
 
  
-3. **AI Explainability** (SHAP value Plots stored in ```/Prediction/shap```):
-   * Shap value at different timesteps
+3. **AI Explainability** (SHAP Value Plots stored in ```/Prediction/shap```):
+   * Shap Values at Different Timesteps
 
      <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/653167f9945c207d548a7510f1792f957e660142/Prediction/shap/timestep.png" alt="Alt Text" style="width:50%; height:auto;">
      
-   * Total Shap value
+   * Total Shap Values
 
      <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/4c09b0edada3020a15129535bd0cbcca68a7f79c/Prediction/shap/summary_plot2.png" alt="Alt Text" style="width:50%; height:auto;">
      
-   * Local Shap value (Sample-wise)
+   * Sample-level SHAP Values
 
      <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/653167f9945c207d548a7510f1792f957e660142/Prediction/shap/localplot_sample1.png" alt="Alt Text" style="width:50%; height:auto;">
 
