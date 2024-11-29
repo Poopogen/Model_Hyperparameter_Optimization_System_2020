@@ -6,7 +6,9 @@ This system is ideal for researchers and engineers seeking an efficient solution
 * Streamlined Training Process: Customize and train models efficiently without redundant manual inputs.
 * Automation and Flexibility: Automatically adjusts and trains based on selected hyperparameters.
 
-  
+## Inputs:
+**Training and Testing Datasets** (stored in ```/Data```):
+
 ## Outputs:
 1. **Training Results** including learning curves and saved models (stored in ```/Output_files```)
    <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/653167f9945c207d548a7510f1792f957e660142/Output_files/Plot/Loss_plot/mse/loss_per_epoch_withparameterinfo_mse.png" alt="Alt Text" style="width:40%; height:auto;">
