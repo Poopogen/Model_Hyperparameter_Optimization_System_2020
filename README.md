@@ -11,6 +11,6 @@ This repository features a system designed to simplify and automate hyperparamet
 2. Prediction Results including result plots and excel files (stored in /Prediction/output)
 3. AI Explainability (sHAP value Plots stored in /Prediction/shap):
    ![image](https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/4c09b0edada3020a15129535bd0cbcca68a7f79c/Prediction/shap/summary_plot2.png)
-
+  <img src="https://github.com/Poopogen/Model_Hyperparameter_Optimization_System_2020/blob/4c09b0edada3020a15129535bd0cbcca68a7f79c/Prediction/shap/summary_plot2.png" alt="Alt Text" style="width:50%; height:auto;">
 
 This system is ideal for researchers and engineers seeking an efficient solution for model training, evaluation, and explainability.
